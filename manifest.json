@@ -2,7 +2,7 @@
   "name": "صلاتي - مكة المكرمة",
   "short_name": "صلاتي",
   "description": "مواقيت الصلاة في مكة المكرمة - أم القرى",
-  "start_url": "./معاينة-التطبيق.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0B1D2A",
   "theme_color": "#1B8B6A",
