@@ -77,9 +77,10 @@ class CalendarVM: ObservableObject {
             let d = DayPrayer(gregorianDay: gDay, hijriDay: hDay, weekday: weekday, fajr: PrayerDateHelper.to12Hour(shift(baseTimings[0], offset)), dhuhr: PrayerDateHelper.to12Hour(shift(baseTimings[1], offset)), asr: PrayerDateHelper.to12Hour(shift(baseTimings[2], offset)), maghrib: PrayerDateHelper.to12Hour(shift(baseTimings[3], offset)), isha: PrayerDateHelper.to12Hour(shift(baseTimings[4], offset)), isToday: isToday)
             result.append(d)
         }
+        let finalDays = result
         await MainActor.run {
-            days = result
-            isLoading = false
+            self.days = finalDays
+            self.isLoading = false
         }
     }
 }
