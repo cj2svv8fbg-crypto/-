@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 56;
+    objects = {
+
+/* Begin PBXBuildFile section */
+		8CE0128D54D55A8401193746 /* SalatiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1F0DF5A76494E0A3BADF7 /* SalatiApp.swift */; };
+		43E4E225EC9C41763AFD416C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AF674E08D4AA0D88770A6 /* ContentView.swift */; };
+		33609B788B202E765BA6DAD4 /* PrayerTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52899971F2AF7E5A7EE93A89 /* PrayerTimes.swift */; };
+		C707F14F7D6E12BEAB64CB6C /* PrayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553C57A03C0F3198F5D5A76F /* PrayerService.swift */; };
+		622E26995531FF194FBA042F /* PrayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7A7253395B78C40D2357D /* PrayerViewModel.swift */; };
+		153E5C9CBBF545D6C2B90C3C /* NextPrayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77673077B6F45070B87D86FA /* NextPrayerCard.swift */; };
+		F0C1A0252A7D9ED862497A4D /* PrayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969B96A1F256ED5978C10C10 /* PrayerRow.swift */; };
+		43DCA7D9DC5DD27590F22E78 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A5BC4A0BC480461092E7D8 /* HeaderView.swift */; };
+		9BD09DABE855DFA86D127212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE9B50C56B66BB33C78C4E5 /* Assets.xcassets */; };
+		61C377ABC266D6F683ABEEC6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73B0BE0CD81F1A3BEC7B89 /* SplashView.swift */; };
+		95304B4D2DF1CBDE675F46C3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84677FB800F8CDD999E5F8B /* MainTabView.swift */; };
+		A3178BFD9CB53F95CD664A2C /* QiblaCompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FADA44CE4BC6E0884C24E1 /* QiblaCompassView.swift */; };
+		5309F7B3D3A298F6669DCDD3 /* AdhanSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965E9EDE76752BC0E8F287F /* AdhanSettingsView.swift */; };
+		5FFB3587AA8F2A9F2AB0CD46 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E224EB989200622329677 /* QuranView.swift */; };
+		ED4C9E2AB80483E2F90A4060 /* AzkarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E0463799D6150EFA0DE36A /* AzkarView.swift */; };
+		2356949E5823F67B1A4DF19B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E398A18EC15DFE8D46227 /* CalendarView.swift */; };
+		4E0F99A1A248AD66DE6308F1 /* AdhanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A912FCE33BB2B256911371 /* AdhanService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AF1F0DF5A76494E0A3BADF7 /* SalatiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalatiApp.swift; sourceTree = "<group>"; };
+		CE0AF674E08D4AA0D88770A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52899971F2AF7E5A7EE93A89 /* PrayerTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimes.swift; sourceTree = "<group>"; };
+		553C57A03C0F3198F5D5A76F /* PrayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerService.swift; sourceTree = "<group>"; };
+		56B7A7253395B78C40D2357D /* PrayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewModel.swift; sourceTree = "<group>"; };
+		77673077B6F45070B87D86FA /* NextPrayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerCard.swift; sourceTree = "<group>"; };
+		969B96A1F256ED5978C10C10 /* PrayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRow.swift; sourceTree = "<group>"; };
+		E5A5BC4A0BC480461092E7D8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8AE9B50C56B66BB33C78C4E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AEA11D3B852130A96CBD11B /* Salati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salati.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD73B0BE0CD81F1A3BEC7B89 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E84677FB800F8CDD999E5F8B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E2FADA44CE4BC6E0884C24E1 /* QiblaCompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaCompassView.swift; sourceTree = "<group>"; };
+		F965E9EDE76752BC0E8F287F /* AdhanSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhanSettingsView.swift; sourceTree = "<group>"; };
+		A33E224EB989200622329677 /* QuranView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranView.swift; sourceTree = "<group>"; };
+		07E0463799D6150EFA0DE36A /* AzkarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzkarView.swift; sourceTree = "<group>"; };
+		164E398A18EC15DFE8D46227 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D3A912FCE33BB2B256911371 /* AdhanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhanService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EB13DEC7B8139AB6D0D11F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B7E76E85E790E4EA53811A31 = {
+			isa = PBXGroup;
+			children = (
+				FAC42795961AB9DE0A31B643 /* Salati */,
+				8779F83F20DF1C0C6AB7C603 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8779F83F20DF1C0C6AB7C603 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA11D3B852130A96CBD11B /* Salati.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAC42795961AB9DE0A31B643 /* Salati */ = {
+			isa = PBXGroup;
+			children = (
+				1AF1F0DF5A76494E0A3BADF7 /* SalatiApp.swift */,
+				CE0AF674E08D4AA0D88770A6 /* ContentView.swift */,
+				0485FBFEB80C4434BACE8CD2 /* Models */,
+				35573150A4A9B3CD84449C33 /* Services */,
+				33D37E44CB2CB9AF679E582E /* ViewModels */,
+				6083385706C7F7E601E8F9F2 /* Views */,
+				8AE9B50C56B66BB33C78C4E5 /* Assets.xcassets */,
+			);
+			path = Salati;
+			sourceTree = "<group>";
+		};
+		0485FBFEB80C4434BACE8CD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52899971F2AF7E5A7EE93A89 /* PrayerTimes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35573150A4A9B3CD84449C33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				553C57A03C0F3198F5D5A76F /* PrayerService.swift */,
+				D3A912FCE33BB2B256911371 /* AdhanService.swift */);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		33D37E44CB2CB9AF679E582E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				56B7A7253395B78C40D2357D /* PrayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6083385706C7F7E601E8F9F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77673077B6F45070B87D86FA /* NextPrayerCard.swift */,
+				969B96A1F256ED5978C10C10 /* PrayerRow.swift */,
+				E5A5BC4A0BC480461092E7D8 /* HeaderView.swift */,
+				CD73B0BE0CD81F1A3BEC7B89 /* SplashView.swift */,
+				94E77A7023855FD5EE143724 /* Tabs */);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		94E77A7023855FD5EE143724 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				E84677FB800F8CDD999E5F8B /* MainTabView.swift */,
+				E2FADA44CE4BC6E0884C24E1 /* QiblaCompassView.swift */,
+				F965E9EDE76752BC0E8F287F /* AdhanSettingsView.swift */,
+				A33E224EB989200622329677 /* QuranView.swift */,
+				07E0463799D6150EFA0DE36A /* AzkarView.swift */,
+				164E398A18EC15DFE8D46227 /* CalendarView.swift */
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		186A7AE960AD1CD245CFE5F9 /* Salati */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4970765F269C65206FB62CB9 /* Build configuration list for PBXNativeTarget "Salati" */;
+			buildPhases = (
+				AEBA54363C298AE4C43B126A /* Sources */,
+				5EB13DEC7B8139AB6D0D11F5 /* Frameworks */,
+				E3A93B24550AEFBA05FB1E61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Salati;
+			productName = Salati;
+			productReference = 3AEA11D3B852130A96CBD11B /* Salati.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB962ABAF9CE9E3ACF6F16B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					186A7AE960AD1CD245CFE5F9 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 5477E4BA5F16E023C23F376A /* Build configuration list for PBXProject "Salati" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			fileSystemSynchronizedGroups = (
+			);
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+			);
+			mainGroup = B7E76E85E790E4EA53811A31;
+			productRefGroup = 8779F83F20DF1C0C6AB7C603 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				186A7AE960AD1CD245CFE5F9 /* Salati */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3A93B24550AEFBA05FB1E61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD09DABE855DFA86D127212 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEBA54363C298AE4C43B126A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE0128D54D55A8401193746 /* SalatiApp.swift in Sources */,
+				43E4E225EC9C41763AFD416C /* ContentView.swift in Sources */,
+				33609B788B202E765BA6DAD4 /* PrayerTimes.swift in Sources */,
+				C707F14F7D6E12BEAB64CB6C /* PrayerService.swift in Sources */,
+				622E26995531FF194FBA042F /* PrayerViewModel.swift in Sources */,
+				153E5C9CBBF545D6C2B90C3C /* NextPrayerCard.swift in Sources */,
+				F0C1A0252A7D9ED862497A4D /* PrayerRow.swift in Sources */,
+				43DCA7D9DC5DD27590F22E78 /* HeaderView.swift in Sources */,
+				61C377ABC266D6F683ABEEC6 /* SplashView.swift in Sources */,
+				4E0F99A1A248AD66DE6308F1 /* AdhanService.swift in Sources */,
+				2356949E5823F67B1A4DF19B /* CalendarView.swift in Sources */,
+				ED4C9E2AB80483E2F90A4060 /* AzkarView.swift in Sources */,
+				5FFB3587AA8F2A9F2AB0CD46 /* QuranView.swift in Sources */,
+				5309F7B3D3A298F6669DCDD3 /* AdhanSettingsView.swift in Sources */,
+				A3178BFD9CB53F95CD664A2C /* QiblaCompassView.swift in Sources */,
+				95304B4D2DF1CBDE675F46C3 /* MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		713CF9BFA5F4F27C884E3FC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		871177637415AD80F7F6FF08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		1196C5A60213753DF777BA3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "صلاتي";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج موقعك لحساب اتجاه القبلة بدقة للكعبة المشرفة";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "نحتاج موقعك لحساب اتجاه القبلة";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salati.makkah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFA7431911D3C97AE6FCE6D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "صلاتي";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "نحتاج موقعك لحساب اتجاه القبلة بدقة للكعبة المشرفة";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "نحتاج موقعك لحساب اتجاه القبلة";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salati.makkah;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5477E4BA5F16E023C23F376A /* Build configuration list for PBXProject "Salati" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				713CF9BFA5F4F27C884E3FC8 /* Debug */,
+				871177637415AD80F7F6FF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4970765F269C65206FB62CB9 /* Build configuration list for PBXNativeTarget "Salati" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1196C5A60213753DF777BA3C /* Debug */,
+				FFA7431911D3C97AE6FCE6D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+    };
+    rootObject = FB962ABAF9CE9E3ACF6F16B7 /* Project object */;
+}
