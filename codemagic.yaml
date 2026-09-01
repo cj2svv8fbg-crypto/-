@@ -1,0 +1,28 @@
+workflows:
+  ios-workflow:
+    name: صلاتي iOS
+    max_build_duration: 20
+    instance_type: mac_mini_m2
+    environment:
+      xcode: 15.2
+      cocoapods: default
+    scripts:
+      - name: Build IPA (بدون توقيع - للتثبيت بـ Sideloadly)
+        script: |
+          xcodebuild -project Salati.xcodeproj \
+            -scheme Salati \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO clean build
+          APP_PATH=$(find build/Build/Products -name "*.app" | head -1)
+          mkdir -p Payload
+          cp -r "$APP_PATH" Payload/
+          zip -r Salati.ipa Payload
+          ls -lh Salati.ipa
+    artifacts:
+      - Salati.ipa
+    publishing:
+      email:
+        recipients:
+          - user@example.com

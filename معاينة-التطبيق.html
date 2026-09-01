@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صلاتي - معاينة التطبيق</title>
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="صلاتي">
+<meta name="theme-color" content="#0B1D2A">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B1D2A'/><text x='50' y='68' font-size='52' text-anchor='middle'>🕌</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:#0a1620;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:20px;color:#fff}
+.top-bar{text-align:center;margin-bottom:18px}
+.top-bar h1{font-size:15px;opacity:.6;margin-bottom:6px;letter-spacing:1px}
+.top-bar p{font-size:13px;opacity:.4}
+.phone{width:390px;height:844px;background:linear-gradient(180deg,#0B1D2A 0%,#132E3A 50%,#0F3A2E 100%);border-radius:48px;border:10px solid #1a1a1a;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 2px #333;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.phone::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:110px;height:28px;background:#000;border-radius:0 0 18px 18px;z-index:10}
+.status-bar{height:44px;display:flex;justify-content:space-between;align-items:center;padding:12px 28px 0;font-size:14px;font-weight:700;margin-top:6px}
+.content{flex:1;overflow-y:auto;padding:12px 16px 20px;scrollbar-width:none}
+.phone{padding-bottom:0}
+.content::-webkit-scrollbar{display:none}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.logo{display:flex;gap:10px;align-items:center}
+.logo-icon{width:44px;height:44px;background:linear-gradient(180deg,#1B8B6A,#0F5D4A);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-text h2{font-size:19px;font-weight:900}
+.logo-text p{font-size:11px;opacity:.5}
+.time-box{text-align:left}
+.time-box .clock{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+.time-box .tz{font-size:10px;opacity:.5}
+.date-row{display:flex;gap:10px;margin-bottom:14px}
+.date-card{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:11px;text-align:center}
+.date-card .label{font-size:10px;opacity:.5;margin-bottom:4px;display:flex;align-items:center;justify-content:center;gap:4px}
+.date-card .value{font-size:13px;font-weight:700;line-height:1.3}
+.date-card .sub{font-size:11px;color:#E8B44D;font-weight:700;margin-top:2px}
+.date-card .sub2{font-size:10px;opacity:.4}
+.next-card{background:linear-gradient(135deg,#0F5D4A 0%,#1B8B6A 50%,#2EC4A0 100%);border-radius:28px;padding:20px;position:relative;overflow:hidden;margin-bottom:14px;box-shadow:0 12px 24px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.12)}
+.next-card::after{content:'☪';position:absolute;left:18px;top:-8px;font-size:78px;opacity:.07;transform:rotate(-12deg)}
+.next-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.next-top .badge{background:rgba(255,255,255,.2);padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;display:flex;gap:4px;align-items:center}
+.next-main{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}
+.next-main h3{font-size:34px;font-weight:900;line-height:1}
+.next-main .en{font-size:12px;opacity:.7;margin-top:2px}
+.next-main .time{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;direction:ltr}
+.p-time b small{font-size:11px;opacity:.8;margin-right:4px;font-weight:700}
+.next-main .hint{font-size:10px;opacity:.7}
+.countdown{background:rgba(0,0,0,.18);border-radius:16px;padding:12px 14px}
+.countdown-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}
+.countdown-top b{font-size:16px;font-variant-numeric:tabular-nums}
+.progress{height:6px;background:rgba(255,255,255,.25);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;background:#fff;border-radius:10px;transition:width 1s linear}
+.quick-row{display:flex;gap:10px;margin-bottom:14px}
+.quick{flex:1;background:rgba(255,255,255,.07);border-radius:14px;padding:12px 0;text-align:center;border:1px solid rgba(255,255,255,.04)}
+.quick .q-icon{width:36px;height:36px;background:#fff;color:#1B8B6A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:16px}
+.quick b{font-size:12px;display:block}
+.quick span{font-size:10px;opacity:.45}
+.list{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:14px}
+.list-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.list-head h4{font-size:14px;font-weight:800}
+.refresh{color:#2EC4A0;font-size:12px;cursor:pointer;display:flex;gap:4px;align-items:center;background:none;border:none;font-family:inherit}
+.prayer{display:flex;align-items:center;gap:12px;padding:11px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:18px;margin-bottom:8px;transition:.2s}
+.prayer.next{transform:scale(1.02);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18);box-shadow:0 6px 14px rgba(27,139,106,.25)}
+.prayer.next .p-icon{background:#1B8B6A;color:#fff}
+.prayer.current{border-color:rgba(232,180,77,.25)}
+.prayer.current .p-icon{background:rgba(232,180,77,.2);color:#E8B44D}
+.p-icon{width:48px;height:48px;background:rgba(255,255,255,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.p-info{flex:1}
+.p-info b{font-size:15px;display:block}
+.p-info span{font-size:11px;opacity:.5}
+.p-time{text-align:left}
+.p-time b{font-size:17px;font-variant-numeric:tabular-nums;display:block}
+.p-time .tag{font-size:10px;font-weight:800;background:#fff;color:#1B8B6A;padding:2px 7px;border-radius:20px;display:inline-block;margin-top:2px}
+.p-time .tag-current{color:#E8B44D;font-size:10px}
+.ayah{background:rgba(255,255,255,.06);border-radius:16px;padding:14px;text-align:center;margin-top:14px;border:1px solid rgba(255,255,255,.05)}
+.ayah .basmala{color:#E8B44D;font-family:'Amiri',serif;font-size:18px;margin-bottom:4px}
+.ayah .text{font-family:'Amiri',serif;font-size:14px;line-height:1.6}
+.ayah .ref{font-size:10px;opacity:.4;margin-top:4px}
+.footer{font-size:10px;opacity:.3;text-align:center;margin-top:12px;line-height:1.5}
+.loading{font-size:12px;opacity:.6;text-align:center;padding:8px}
+@media(max-width:420px){.phone{width:100%;height:820px;border-radius:32px;border-width:6px} body{padding:10px}}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <h1>📱 معاينة مباشرة — تطبيق صلاتي</h1>
+  <p>هذا بالضبط شكل التطبيق على الآيفون • افتح الملف على جوالك لتراه بحجم الشاشة الكامل</p>
+</div>
+
+<div class="phone">
+  <!-- شاشة التحميل 4 ثواني تنزل من فوق لتحت -->
+  <div id="splash" style="position:absolute;inset:0;background:linear-gradient(180deg,#0B1D2A 0%,#132E3A 50%,#0F3A2E 100%);z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:34px 20px 40px;transition:transform .85s cubic-bezier(.7,0,.3,1);border-radius:38px;overflow:hidden">
+    <div style="position:absolute;top:30px;left:-20px;font-size:220px;opacity:.04;pointer-events:none">☪</div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:40px">
+      <div style="width:110px;height:110px;background:linear-gradient(180deg,#1B8B6A,#0F5D4A);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:52px;box-shadow:0 14px 28px rgba(27,139,106,.35)">🕌</div>
+      <div style="text-align:center">
+        <div style="font-size:38px;font-weight:900;color:#fff">صلاتي</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:2px">مواقيت الصلاة في مكة المكرمة</div>
+        <div style="margin-top:8px;display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.08);padding:5px 12px;border-radius:20px;font-size:11px;color:#2EC4A0">📍 مكة المكرمة • أم القرى</div>
+      </div>
+    </div>
+    <div style="width:100%;display:flex;flex-direction:column;gap:14px;align-items:center">
+      <div style="width:85%;height:5px;background:rgba(255,255,255,.15);border-radius:10px;overflow:hidden"><div id="splashProgress" style="height:100%;width:0%;background:linear-gradient(90deg,#1B8B6A,#2EC4A0);border-radius:10px;transition:width 4s linear"></div></div>
+      <div style="display:flex;gap:8px;align-items:center;color:rgba(255,255,255,.65);font-size:13px"><span style="width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#2EC4A0;border-radius:50%;display:inline-block;animation:spin .8s linear infinite"></span><span id="splashText">جاري تحميل مواقيت مكة</span></div>
+      <div style="text-align:center"><div style="color:#E8B44D;opacity:.8">﷽</div><div style="font-family:'Amiri',serif;font-size:11px;color:rgba(255,255,255,.35)">«إن الصلاة كانت على المؤمنين كتاباً موقوتاً»</div></div>
+    </div>
+  </div>
+  <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+  <div id="fakeNotif" style="position:absolute;top:46px;left:12px;right:12px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-radius:18px;padding:12px 14px;display:none;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.35);color:#111;animation:slideDown .35s ease">
+    <div style="display:flex;gap:10px;align-items:center">
+      <div style="width:38px;height:38px;background:linear-gradient(135deg,#0F5D4A,#1B8B6A);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px">🕌</div>
+      <div style="flex:1">
+        <div style="font-size:11px;opacity:.5;display:flex;justify-content:space-between"><span>صلاتي</span><span>الآن</span></div>
+        <div id="fakeNotifTitle" style="font-size:14px;font-weight:800">حان وقت صلاة العصر 🕌</div>
+        <div id="fakeNotifBody" style="font-size:12px;opacity:.7">مواقيت مكة المكرمة - 03:40 م</div>
+      </div>
+    </div>
+  </div>
+  <style>@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}</style>
+  <div class="status-bar"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="opacity:.8">📶</span><span style="opacity:.8">🔋</span></span></div>
+  <div class="content">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">🕌</div>
+        <div class="logo-text"><h2>صلاتي</h2><p>مواقيت الصلاة - مكة المكرمة</p></div>
+      </div>
+      <div class="time-box">
+        <div class="clock" id="liveClock">--:--:--</div>
+        <div class="tz">توقيت مكة</div>
+      </div>
+    </div>
+
+    <div class="date-row">
+      <div class="date-card">
+        <div class="label">📅 التاريخ الهجري</div>
+        <div class="value" id="hijri">جاري التحميل...</div>
+        <div class="sub" id="hijriMY">--</div>
+      </div>
+      <div class="date-card">
+        <div class="label">🗓️ التاريخ الميلادي</div>
+        <div class="value" id="gregorian">--</div>
+        <div class="sub2">Asia/Riyadh</div>
+      </div>
+    </div>
+
+    <!-- Next Prayer -->
+    <div class="next-card">
+      <div class="next-top"><span>◷ الصلاة القادمة</span><span class="badge">📍 مكة المكرمة</span></div>
+      <div class="next-main">
+        <div><h3 id="nextName">العصر</h3><div class="en" id="nextEn">Asr</div></div>
+        <div style="text-align:left"><div class="time" id="nextTime">03:42</div><div class="hint">توقيت مكة</div></div>
+      </div>
+      <div class="countdown">
+        <div class="countdown-top"><span>متبقي</span><b id="countdown">--:--:--</b></div>
+        <div class="progress"><div class="progress-fill" id="progress" style="width:35%"></div></div>
+      </div>
+    </div>
+
+    <div class="quick-row">
+      <div class="quick"><div class="q-icon">📍</div><b>مكة</b><span>21.38°N</span></div>
+      <div class="quick"><div class="q-icon">🔔</div><b>التنبيهات</b><span style="color:#2EC4A0">مفعلة</span></div>
+      <div class="quick" style="cursor:pointer" onclick="alert('🕋 اتجاه القبلة في مكة: أنت في الحرم، اتجه للكعبة مباشرة\n21.4225°N, 39.8262°E')"><div class="q-icon">🧭</div><b>القبلة</b><span>21°</span></div>
+    </div>
+
+    <div class="list">
+      <div class="list-head"><h4>مواقيت اليوم</h4><button class="refresh" onclick="fetchTimes()">↻ تحديث</button></div>
+      <div id="prayerList"><div class="loading">جاري جلب مواقيت مكة...</div></div>
+    </div>
+
+    <div class="ayah">
+      <div class="basmala">﷽</div>
+      <div class="text">«إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا»</div>
+      <div class="ref">النساء - 103</div>
+    </div>
+    <div class="footer">طريقة الحساب: أم القرى - مكة المكرمة • المنطقة الزمنية Asia/Riyadh<br>البيانات من Aladhan API • method 4</div>
+  </div>
+  <!-- Tab Bar الجديد - 5 تبويبات -->
+  <div style="height:72px;background:rgba(11,29,42,.98);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-around;align-items:center;padding-bottom:8px;flex-shrink:0">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#2EC4A0"><span style="font-size:20px">🌙</span><span style="font-size:9px;font-weight:800">صلاتي</span></div>
+    <div onclick="alert('📖 تبويب القرآن:\n• 9 سور سريعة (الفاتحة، يس، الملك...)\n• تحميل من api.alquran.cloud\n• مسبحة إلكترونية 33 مع اهتزاز')" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:rgba(255,255,255,.55);cursor:pointer"><span style="font-size:18px">📖</span><span style="font-size:9px">القرآن</span></div>
+    <div onclick="alert('🤲 تبويب الأذكار:\n• أذكار الصباح/المساء/النوم\n• أدعية عامة\n• علامة ✅ لكل ذكر')" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:rgba(255,255,255,.55);cursor:pointer"><span style="font-size:18px">🤲</span><span style="font-size:9px">الأذكار</span></div>
+    <div onclick="alert('🧭 بوصلة القبلة الحقيقية:\n• حساب زاوية الكعبة 21.4225,39.8262\n• تستخدم GPS + البوصلة\n• تدور مع حركة الجوال وتظهر 🟢 عند التطابق')" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:rgba(255,255,255,.55);cursor:pointer"><span style="font-size:18px">🧭</span><span style="font-size:9px">القبلة</span></div>
+    <div onclick="alert('📅 التقويم الشهري:\n• كل أيام الشهر هجري/ميلادي\n• مواقيت 12 ساعة لكل يوم\n• اليوم الحالي مميز')" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:rgba(255,255,255,.55);cursor:pointer"><span style="font-size:18px">📅</span><span style="font-size:9px">التقويم</span></div>
+  </div>
+</div>
+
+<p style="margin-top:16px;font-size:12px;opacity:.4;text-align:center">💡 على الآيفون الحقيقي نفس التصميم لكن مع إشعارات وخطوط iOS الأصلية وحركة العد التنازلي كل ثانية</p>
+<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+  <a href="." style="background:#1B8B6A;color:#fff;padding:10px 18px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:700">📂 فتح مجلد التطبيق</a>
+  <button onclick="replaySplash()" style="background:#2EC4A0;color:#111;padding:10px 18px;border-radius:12px;font-size:13px;cursor:pointer;font-family:inherit;border:none;font-weight:700">▶️ عرض شاشة التحميل</button>
+  <button onclick="showFakeNotif('العصر','03:40 م')" style="background:#E8B44D;color:#111;padding:10px 18px;border-radius:12px;font-size:13px;cursor:pointer;font-family:inherit;border:none;font-weight:700">🔔 جرب الإشعار</button>
+</div>
+
+<script>
+const prayersConfig = [
+  {ar:'الفجر',en:'Fajr',icon:'🌙'},
+  {ar:'الشروق',en:'Sunrise',icon:'🌅'},
+  {ar:'الظهر',en:'Dhuhr',icon:'☀️'},
+  {ar:'العصر',en:'Asr',icon:'🌤️'},
+  {ar:'المغرب',en:'Maghrib',icon:'🌇'},
+  {ar:'العشاء',en:'Isha',icon:'🌙'},
+];
+let prayerTimes = {};
+let nextPrayerEn = 'Asr';
+
+function updateClock(){
+  const now = new Date();
+  const riyadh = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Riyadh'}));
+  document.getElementById('liveClock').textContent = riyadh.toLocaleTimeString('ar-SA',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZone:'Asia/Riyadh'});
+}
+setInterval(updateClock,1000); updateClock();
+
+function to12Hour(time24){
+  const [h,m] = time24.split(':').map(Number);
+  const period = h >= 12 ? 'م' : 'ص';
+  let hour12 = h % 12;
+  if(hour12 === 0) hour12 = 12;
+  return `${String(hour12).padStart(2,'0')}:${String(m).padStart(2,'0')} <small>${period}</small>`;
+}
+function parseToday(timeStr){
+  const [h,m]=timeStr.split(':').map(Number);
+  const nowRiyadh = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Riyadh'}));
+  const d = new Date(nowRiyadh);
+  d.setHours(h,m,0,0);
+  return d;
+}
+
+function renderList(){
+  const list = document.getElementById('prayerList');
+  const now = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Riyadh'}));
+  // next = أقرب وقت > الآن
+  let next = null;
+  let minDiff = Infinity;
+  prayersConfig.forEach(p=>{
+    const t = prayerTimes[p.en];
+    if(!t) return;
+    const d = parseToday(t);
+    const diff = d - now;
+    if(diff>0 && diff < minDiff){ minDiff=diff; next=p.en; }
+  });
+  if(!next){
+    // بعد العشاء -> الفجر غدا
+    next='Fajr';
+    const fajr = parseToday(prayerTimes['Fajr']||'05:12');
+    fajr.setDate(fajr.getDate()+1);
+    minDiff = fajr - now;
+  }
+  nextPrayerEn = next;
+  const np = prayersConfig.find(x=>x.en===next);
+  document.getElementById('nextName').textContent = np.ar;
+  document.getElementById('nextEn').textContent = np.en;
+  document.getElementById('nextTime').innerHTML = to12Hour(prayerTimes[next]||'--:--');
+
+  // دالة إظهار إشعار وهمي للمعاينة
+  function showFakeNotif(prayerAr, time12){
+    document.getElementById('fakeNotifTitle').textContent = `حان وقت صلاة ${prayerAr} 🕌`;
+    document.getElementById('fakeNotifBody').textContent = `مواقيت مكة المكرمة - ${time12.replace(/<[^>]*>/g,'')}`;
+    const el = document.getElementById('fakeNotif');
+    el.style.display='block';
+    // اهتزاز وصوت وهمي
+    if(navigator.vibrate) navigator.vibrate([200,100,200]);
+    setTimeout(()=> el.style.display='none', 4000);
+  }
+  // countdown
+  function tick(){
+    const now2 = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Riyadh'}));
+    let target = parseToday(prayerTimes[next]||'15:40');
+    if(target <= now2) target.setDate(target.getDate()+1);
+    const diff = Math.max(0, Math.floor((target - now2)/1000));
+    const h = String(Math.floor(diff/3600)).padStart(2,'0');
+    const m = String(Math.floor(diff%3600/60)).padStart(2,'0');
+    const s = String(diff%60).padStart(2,'0');
+    document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
+    // إذا دخل وقت الصلاة (diff==0) اعرض إشعار وهمي مرة واحدة
+    if(diff===0 && !window._notifiedAt){
+      window._notifiedAt = Date.now();
+      const p = prayersConfig.find(x=>x.en===next);
+      showFakeNotif(p.ar, to12Hour(prayerTimes[next]));
+    }
+    if(diff>2) window._notifiedAt = null;
+    // progress between current and next
+    // current = last before now
+    let current = prayersConfig[prayersConfig.length-1];
+    for(let i=0;i<prayersConfig.length;i++){
+      const d=parseToday(prayerTimes[prayersConfig[i].en]||'00:00');
+      if(d <= now2) current = prayersConfig[i];
+      else break;
+    }
+    const curD = parseToday(prayerTimes[current.en]||'00:00');
+    if(curD > now2) curD.setDate(curD.getDate()-1);
+    const total = (target - curD)/1000;
+    const elapsed = (now2 - curD)/1000;
+    const pct = Math.min(100, Math.max(0, (elapsed/total)*100));
+    document.getElementById('progress').style.width = pct+'%';
+  }
+  tick();
+  if(window._tick) clearInterval(window._tick);
+  window._tick = setInterval(tick,1000);
+
+  // build rows
+  let html='';
+  // find current
+  let currentEn=null;
+  for(let i=0;i<prayersConfig.length;i++){
+    const d=parseToday(prayerTimes[prayersConfig[i].en]||'00:00');
+    if(d <= now) currentEn = prayersConfig[i].en; else break;
+  }
+  prayersConfig.forEach(p=>{
+    const isNext = p.en===next;
+    const isCurrent = p.en===currentEn && !isNext;
+    html+= `<div class="prayer ${isNext?'next':''} ${isCurrent?'current':''}">
+      <div class="p-icon">${p.icon}</div>
+      <div class="p-info"><b>${p.ar}</b><span>${p.en}</span></div>
+      <div class="p-time"><b>${to12Hour(prayerTimes[p.en]||'--:--')}</b>${isNext?'<span class="tag">القادمة</span>':isCurrent?'<span class="tag-current">الحالية</span>':''}</div>
+    </div>`;
+  });
+  list.innerHTML=html;
+}
+
+// تشغيل شاشة التحميل 4 ثواني ثم تنزل لتحت
+(function(){
+  const splash = document.getElementById('splash');
+  const bar = document.getElementById('splashProgress');
+  const txt = document.getElementById('splashText');
+  setTimeout(()=> bar.style.width='100%', 100);
+  let dots=0; const iv=setInterval(()=>{ dots=(dots+1)%4; txt.textContent='جاري تحميل مواقيت مكة'+'.'.repeat(dots); },400);
+  setTimeout(()=>{
+    clearInterval(iv);
+    splash.style.transform='translateY(105%)';
+    setTimeout(()=> splash.style.display='none', 900);
+  },4000);
+  // زر إعادة عرضها
+  window.replaySplash = ()=>{ splash.style.display='flex'; splash.style.transform='translateY(0)'; bar.style.width='0%'; setTimeout(()=> bar.style.width='100%',100); setTimeout(()=>{ splash.style.transform='translateY(105%)'; setTimeout(()=> splash.style.display='none',900); },4000); };
+})();
+
+async function fetchTimes(){
+  document.getElementById('prayerList').innerHTML='<div class="loading">جاري التحديث...</div>';
+  try{
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2,'0');
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const yyyy = today.getFullYear();
+    const url = `https://api.aladhan.com/v1/timingsByCity/${dd}-${mm}-${yyyy}?city=Makkah&country=Saudi Arabia&method=4`;
+    const res = await fetch(url);
+    const json = await res.json();
+    const t = json.data.timings;
+    prayerTimes = {
+      Fajr: t.Fajr.slice(0,5),
+      Sunrise: t.Sunrise.slice(0,5),
+      Dhuhr: t.Dhuhr.slice(0,5),
+      Asr: t.Asr.slice(0,5),
+      Maghrib: t.Maghrib.slice(0,5),
+      Isha: t.Isha.slice(0,5),
+    };
+    document.getElementById('hijri').textContent = `${json.data.date.hijri.weekday.ar} ${json.data.date.hijri.day} ${json.data.date.hijri.month.ar}`;
+    document.getElementById('hijriMY').textContent = `${json.data.date.hijri.month.ar} ${json.data.date.hijri.year} هـ`;
+    document.getElementById('gregorian').textContent = json.data.date.readable;
+    localStorage.setItem('salati_cache', JSON.stringify({prayerTimes, hijri:document.getElementById('hijri').textContent, hijriMY:document.getElementById('hijriMY').textContent, greg:document.getElementById('gregorian').textContent}));
+  }catch(e){
+    console.error(e);
+    // fallback mock مكة
+    prayerTimes = {Fajr:'05:12',Sunrise:'06:30',Dhuhr:'12:18',Asr:'15:40',Maghrib:'18:05',Isha:'19:35'};
+    document.getElementById('hijri').textContent='الجمعة 12 رجب';
+    document.getElementById('hijriMY').textContent='رجب 1447 هـ';
+    document.getElementById('gregorian').textContent=new Date().toLocaleDateString('ar-SA',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+    const cached = localStorage.getItem('salati_cache');
+    if(cached){
+      try{
+        const c=JSON.parse(cached);
+        prayerTimes=c.prayerTimes;
+        document.getElementById('hijri').textContent=c.hijri;
+        document.getElementById('hijriMY').textContent=c.hijriMY;
+        document.getElementById('gregorian').textContent=c.greg;
+      }catch{}
+    }
+  }
+  renderList();
+}
+fetchTimes();
+</script>
+</body>
+</html>
