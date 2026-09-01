@@ -32,7 +32,7 @@ struct ContentView: View {
                 }
             }
         } message: { Text(notifAlertMsg) }
-        .onChange(of: vm.prayers) { _, _ in
+        .onChange(of: vm.prayers) { _ in
             PrayerService.scheduleNotifications(for: vm.prayers)
             checkNotificationStatus()
         }
