@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import UserNotifications
 
 struct ContentView: View {
@@ -197,7 +198,7 @@ struct ContentView: View {
         } message: {
             Text(notifAlertMsg)
         }
-        .onChange(of: vm.prayers) { _ in
+        .onChange(of: vm.prayers) { _, _ in
             // كل ما تتحدث المواقيت أعد جدولة الإشعارات
             PrayerService.scheduleNotifications(for: vm.prayers)
             checkNotificationStatus()

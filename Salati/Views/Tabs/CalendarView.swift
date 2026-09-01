@@ -62,7 +62,7 @@ class CalendarVM: ObservableObject {
         
         for day in range {
             guard let date = cal.date(byAdding: .day, value: day - 1, to: startOfMonth) else { continue }
-            let weekday = DateFormatter().stringWithWeekdayAr(date)
+            let weekday = DateFormatter.stringWithWeekdayAr(date)
             let gDay = String(format: "%02d", day)
             let hDay = hijriFmt.string(from: date)
             let isToday = cal.isDate(date, inSameDayAs: now)
