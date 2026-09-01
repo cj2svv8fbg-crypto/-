@@ -8,15 +8,15 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
-      - name: Select Xcode 15
-        run: sudo xcode-select -s /Applications/Xcode_15.2.app || sudo xcode-select -s /Applications/Xcode.app
       - name: Build unsigned IPA
         run: |
-          xcodebuild -project Salati.xcodeproj -scheme Salati -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" clean build
+          xcodebuild -project Salati.xcodeproj -target Salati -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" clean build
           APP_PATH=$(find build/Build/Products -name "*.app" | head -1)
+          echo "App at $APP_PATH"
           mkdir -p Payload
           cp -r "$APP_PATH" Payload/
           zip -r Salati.ipa Payload
+          ls -lh Salati.ipa
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
